@@ -6,6 +6,7 @@ A way to have ProxMox failover between two (Internet facing) network interfaces 
 - The Internet-facing interfaces are ens160 and ens192 and both interfaces are configured to use DHCP.
 - You know your way around the Linux commandline (Shell).
 - Schema:
+
   ![schema](assets/schema.png)
 
   In this case the DHCP-servers provided these IP-addresses:
