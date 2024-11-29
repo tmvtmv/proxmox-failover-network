@@ -7,11 +7,8 @@ if [ -z "$1" ]; then
 fi
 
 INTERFACE="$1"
-echo "Interface: ${INTERFACE}"
-
 GATEWAY=`grep "routers" /var/lib/dhcp/dhclient.${INTERFACE}.leases | tail -1 | awk {'print $3'} | cut -f1 -d";" `
-echo "Gateway: ${GATEWAY}"
-
+echo "Interface ${INTERFACE} has ${GATEWAY} as gateway."
 
 # Perform the ping test
 ping -I "$INTERFACE" -c 1 -W 1 ${GATEWAY} > /dev/null 2>&1
