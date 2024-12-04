@@ -30,6 +30,14 @@ iface ens160 inet dhcp
 
 auto ens192
 iface ens192 inet dhcp
+
+auto vmbr1
+iface vmbr1 inet static
+	address 192.168.1.1
+	netmask 255.255.255.0
+	bridge_ports none
+	bridge_stp off
+	bridge_fd 0
 ```
 
 - Ensure these interfaces are NOT part of any other bridge, bond, vlan
