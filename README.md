@@ -132,9 +132,9 @@ iface ens192 inet dhcp
   iptables -t nat -F
 
   if [ "${INTERFACE}" == "ens192" ]; then
-    iptables -t nat -A POSTROUTING -s 192.168.99.0/24 -o ens192 -j MASQUERADE
+    iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o ens192 -j MASQUERADE
   else
-    iptables -t nat -A POSTROUTING -s 192.168.99.0/24 -o ens160 -j MASQUERADE
+    iptables -t nat -A POSTROUTING -s 192.168.1.0/24 -o ens160 -j MASQUERADE
   fi
   ```
 
